@@ -13,7 +13,7 @@ app.use('/api/pizzas',pizzaRoutes);
 app.use('/api/users',userRoutes);
 app.use('/api/orders',orderRoutes);
 
-if(process.env.NODE_ENV === 'productions'){
+if(process.env.NODE_ENV === 'production'){
     app.use('/',express.static('client/build'))
 
     app.get('*' , (req,res) => {
