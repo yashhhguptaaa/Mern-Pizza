@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@600&family=Otomanopee+One&display=swap');
+
+body ,html{
+  margin: 0;
+  font-family: 'Montserrat', 'Nunito','Otomanopee One' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link{
+  color: black !important;
+}
+
+.navbar-brand{
+  color: black !important;
+  font-weight: bold ;
+}
+
+h1{
+  font-size: 20px !important;
+}
+
+.flex-container{
+  display: flex !important;
+}
+
+.btn{
+  background-color: red !important;
+  color: white !important;
+}
+
+select{
+  box-shadow: none !important;
+  border-color: black !important;
+}
+
+.fa-plus{
+  color: green;
+  margin:5px
+}
+
+.fa-minus{
+  color: red;
+  margin: 5px;
+}
+
+input{
+  margin-top: 10px !important;
+  box-shadow: none !important;
+}
+
+.dropbtn {
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 6.5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.adminfunctions{
+  padding : 10px;
+  background-color: rgb(58, 58, 187);
+}
+
+.adminfunctions li{
+  list-style-type: none !important;
+  
+  display: inline;
+}
+
+.adminfunctions li a{
+  color: white !important;
+  text-decoration: none !important;
+  padding: 30px;
+}
+
+td,th,tr{
+  text-align: left;
+}
