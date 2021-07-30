@@ -13,6 +13,11 @@ export default function Cartscreen() {
     const cartstate = useSelector(state => state.cartReducer);
     const cartItems = cartstate.cartItems;
     var subTotal = cartItems.reduce((total,Item) => { return total +Item.price},0 )
+
+    if(localStorage.getItem('currentuser')== null){
+        alert(`You have to login first`)
+        window.location.href='/login'
+    }
     
     return (
         <div data-aos='fade-down'
