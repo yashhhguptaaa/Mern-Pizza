@@ -21,6 +21,7 @@ export default function Checkout({ subtotal }) {
             {loading && <Loading />}
             {success && <Success success="Your Order Placed Successfully" />}
             {error && <Error error='Something went wrong' />}
+
             <StripeCheckout
 
                 amount={subtotal * 100}
@@ -31,7 +32,14 @@ export default function Checkout({ subtotal }) {
             >
 
 
-                <button className='btn'>Pay Now</button>
+                <button className='btn' onClick={() => {
+                    { 
+                        if(subtotal === 0){
+                            alert(`Your cart is empty`)
+                            window.location.reload();
+                        }
+                    }
+                }}>Pay Now</button>
             </StripeCheckout>
         </div>
     )
