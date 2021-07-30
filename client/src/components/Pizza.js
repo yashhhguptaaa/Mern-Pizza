@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Modal} from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -17,18 +17,25 @@ export default function Pizza({ pizza }) {
 
     const dispatch = useDispatch();
     const addtocart = () => {
-        dispatch(addToCart(pizza, quantity,varient))
+        if (localStorage.getItem('currentUser') == null) {
+            alert(`Please Register first`)
+            window.location.href = '/registration'
+        }
+        else {
+            dispatch(addToCart(pizza, quantity, varient))
+        }
+
     }
 
     return (
-        <div 
-        data-aos='zoom-out'
-        data-aos-duration="1000"
-        className="shadow-lg p-3 mb-5 bg-white rounded">
-            
+        <div
+            data-aos='zoom-out'
+            data-aos-duration="1000"
+            className="shadow-lg p-3 mb-5 bg-white rounded">
+
             <div onClick={handleShow}>
-              <h1>{pizza.name}</h1>
-              <img src={pizza.image} className="img-fluid" style={{ height: "200px" }} />
+                <h1>{pizza.name}</h1>
+                <img src={pizza.image} className="img-fluid" style={{ height: "200px" }} />
             </div>
             <div className="flex-container m-1">
                 <div className="w-100 m-1">
@@ -55,7 +62,8 @@ export default function Pizza({ pizza }) {
                 </div>
 
                 <div className="w-100 m-1">
-                    <button className="btn" onClick={addtocart}>ADD TO CART</button>
+                    <button className="btn"
+                        onClick={addtocart}>ADD TO CART</button>
                 </div>
             </div>
 
@@ -64,7 +72,7 @@ export default function Pizza({ pizza }) {
                     <Modal.Title>{pizza.name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <img src={pizza.image} className="img-fluid" style={{ height: "400px"}} />
+                    <img src={pizza.image} className="img-fluid" style={{ height: "400px" }} />
                 </Modal.Body>
                 <Modal.Body>
                     <p>{pizza.description}</p>
