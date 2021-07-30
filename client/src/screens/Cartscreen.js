@@ -14,7 +14,7 @@ export default function Cartscreen() {
     const cartItems = cartstate.cartItems;
     var subTotal = cartItems.reduce((total,Item) => { return total +Item.price},0 )
 
-    if(localStorage.getItem('currentuser')== null){
+    if(localStorage.getItem('currentUser')== null){
         alert(`You have to login first`)
         window.location.href='/login'
     }
